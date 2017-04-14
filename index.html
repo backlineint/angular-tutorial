@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="store"> <!-- ng-app runs store module when document loads -->
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    </head>
+    <body ng-controller="StoreController as store">
+        <div ng-repeat="product in store.products" ng-hide="product.soldOut"> <!-- Attach controller to this element -->
+            <h1>{{ product.name }}</h1>
+            <h2>${{ product.price }}</h2>
+            <p>{{ product.description }}</p>
+            <button ng-show="product.canPurchase">Add to Cart</button> <!-- ng-show - only show if true -->
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+</html>
